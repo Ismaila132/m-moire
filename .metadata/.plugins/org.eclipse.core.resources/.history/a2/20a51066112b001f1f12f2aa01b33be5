@@ -1,0 +1,47 @@
+package sn.pad.entites;
+
+import java.io.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="journaliers")
+public class Journalier implements Serializable
+{
+	@Id 
+	private String matriculeJournalier;
+	private String prenomJournalier;
+	private String nomJournalier;
+	
+	public Journalier() 
+	{
+		
+	}
+
+	public String getMatriculeJournalier() {
+		return matriculeJournalier;
+	}
+
+	public void setMatriculeJournalier(String matriculeJournalier) {
+		this.matriculeJournalier = matriculeJournalier;
+	}
+
+	public String getPrenomJournalier() {
+		return prenomJournalier;
+	}
+
+	public void setPrenomJournalier(String prenomJournalier) {
+		this.prenomJournalier = prenomJournalier;
+	}
+
+	public String getNomJournalier() {
+		return nomJournalier;
+	}
+
+	public void setNomJournalier(String nomJournalier) {
+		this.nomJournalier = nomJournalier;
+	}
+	
+}
