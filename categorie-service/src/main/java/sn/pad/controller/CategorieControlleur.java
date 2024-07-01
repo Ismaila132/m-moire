@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import sn.pad.dao.*;
 import sn.pad.entites.*;
 
@@ -26,6 +25,7 @@ public class CategorieControlleur
 {
 	@Autowired
 	private CategorieDAO categorieDAO;
+	
 	
 	//http://localhost:3300/categorieapi/categories
 		@PostMapping("/categories")
@@ -41,7 +41,7 @@ public class CategorieControlleur
 			List<Categorie> liste = categorieDAO.listerCategories();
 			return new ResponseEntity <List<Categorie>> (liste,HttpStatus.OK);
 		}
-		// Rechercher port par id
+		// Rechercher categorie par id
 		@GetMapping("/categories/codecategorie/{codeCategorie}")
 		public ResponseEntity<Categorie> trouverUneCategorie(@PathVariable("codeCategorie") Integer codeCategorie)
 		{
@@ -61,5 +61,7 @@ public class CategorieControlleur
 	        categorieDAO.modifierCategorie(existingCategorie);
 	        return new ResponseEntity<>(categorie, HttpStatus.OK);
 	    }
+		
+
 
 }

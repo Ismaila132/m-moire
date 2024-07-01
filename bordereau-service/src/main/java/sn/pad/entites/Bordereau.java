@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.springframework.data.annotation.Transient;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,11 +20,17 @@ public class Bordereau implements Serializable
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer codeBordereau;
-	private Integer matriculeJournalier;	
+	@Transient
+	private Integer matriculeJournalier;
+	@Transient
 	private String prenomJournalier;
+	@Transient
 	private String nomJournalier;
+	@Transient
 	private Integer codePort;
+	@Transient
 	private Integer codeNavire;
+	@Transient
 	private Integer codeCategorie;
 	private LocalDate dateEmbauche;
 	private LocalTime heureEmbauche;

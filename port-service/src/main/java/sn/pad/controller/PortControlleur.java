@@ -32,7 +32,7 @@ public class PortControlleur
 	
 	//http://localhost:3200/portapi/ports
 	@PostMapping("/ports")
-	public ResponseEntity<Port> ajouterNavire(@RequestBody Port port)
+	public ResponseEntity<Port> ajouterPort(@RequestBody Port port)
 	{
 		Port newPort = portDAO.creerPort(port);
 		return new ResponseEntity<Port> (newPort,HttpStatus.CREATED);
@@ -47,7 +47,7 @@ public class PortControlleur
 			}
 			// Rechercher port par id
 			@GetMapping("/ports/codeport/{codePort}")
-			public ResponseEntity<Port> trouverUnNavire(@PathVariable("codePort") Integer codePort)
+			public ResponseEntity<Port> trouverUnPort(@PathVariable("codePort") Integer codePort)
 			{
 				Port port = portDAO.rechercherPort(codePort);
 				return new ResponseEntity<Port>(port,HttpStatus.OK);
@@ -55,7 +55,7 @@ public class PortControlleur
 			//Modifier port
 			//http://localhost:3200/portapi/ports
 			@PutMapping("/ports")
-		    public ResponseEntity<Port> modifierJournalier(@RequestBody Port port) throws Exception 
+		    public ResponseEntity<Port> modifierPort(@RequestBody Port port) throws Exception 
 		    {
 		        Port existingPort = portDAO.rechercherPort(port.getCodePort());
 		        if (existingPort == null) 
@@ -66,7 +66,7 @@ public class PortControlleur
 		        return new ResponseEntity<>(port, HttpStatus.OK);
 		    }
 		    
-		 // Supprimer un navire
+		 // Supprimer un port
 			@DeleteMapping("/ports/codeport/{codePort}")
 		    public ResponseEntity<Void> supprimerPort(@PathVariable("codePort") Integer codePort) 
 		    {

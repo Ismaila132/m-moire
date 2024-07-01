@@ -1,6 +1,9 @@
 package sn.pad.entites;
 
 import java.io.*;
+
+import org.springframework.data.annotation.Transient;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,6 +16,8 @@ public class Navire implements Serializable
 	private Integer codeNavire;
 	private String nomNavire;
 	private String compagnieNavire;
+	@Transient
+	private Integer codePort;
 	
 	public Navire()
 	{
@@ -41,6 +46,14 @@ public class Navire implements Serializable
 
 	public void setCompagnieNavire(String compagnieNavire) {
 		this.compagnieNavire = compagnieNavire;
+	}
+
+	public Integer getCodePort() {
+		return codePort;
+	}
+
+	public void setCodePort(Integer codePort) {
+		this.codePort = codePort;
 	}
 
 }

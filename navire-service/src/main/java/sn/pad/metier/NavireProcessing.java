@@ -1,3 +1,4 @@
+
 package sn.pad.metier;
 
 import java.util.List;
@@ -28,4 +29,3 @@ public class NavireProcessing
         }
     }
 }
-
