@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import sn.pad.entites.Navire;
 
 
-@FeignClient(name="NAVIRE-SERVICE")
+@FeignClient(url="http://localhost:3100",value="NAVIRE-SERVICE")
 public interface ClientNavire 
 {
 	@GetMapping("/navireapi/navires")

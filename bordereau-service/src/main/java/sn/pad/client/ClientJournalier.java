@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import sn.pad.entites.*;
 
 
-@FeignClient(name="JOURNALIER-SERVICE")
+@FeignClient(url="http://localhost:3000",value="JOURNALIER-SERVICE")
 public interface ClientJournalier 
 {
 	@GetMapping("/journalierapi/journaliers")

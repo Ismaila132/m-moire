@@ -1,9 +1,0 @@
-package sn.pad.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import sn.pad.entites.*;
-public interface JournalierRepository extends JpaRepository<Journalier,String>
-{
-	
-}
